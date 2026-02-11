@@ -6,7 +6,8 @@ def copy_file(command: str) -> None:
     if file_name1 == file_name2 or cp != "cp":
         return
     try:
-        with open(file_name1, "r") as source_file, open(file_name2, "w") as dest_file:
+        with (open(file_name1, "r") as source_file,
+              open(file_name2, "w") as dest_file):
             for line in source_file:
                 dest_file.write(line)
     except FileNotFoundError:
